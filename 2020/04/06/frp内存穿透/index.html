@@ -1,0 +1,346 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="JJ Wang">
+  
+  
+  
+  
+    <meta name="description" content="Frp内存穿透  Frp Github地址 利用frp远程控制Windows
+配置方法服务器端:  
+123456789101112131415161718[common]bind_addr &#x3D; 0.0.0.0 # 可以访问frp的目标IP地址，0.0.0.0为不限制bind_port &#x3D; 5443 # tcp主要端口kcp_bind_port &#x3D; 5443 #...">
+  
+  <title>frp内存穿透 [ Wang's Blog ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2020/04/06/linux%E4%BD%BF%E7%94%A8/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        linux使用
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2020/04/06/oneindex/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        oneindex
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4"/>
+          <div id="homelink">Wang's Blog</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>frp内存穿透</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2020-04-06</span>
+      
+        <span id = "post-title-updated">Updated at 2020-04-06</span>
+      
+      
+      <span id = "post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/frp/">frp</a>
+      
+      </span>
+      
+    </p>
+    
+    <h1 id="Frp内存穿透"><a href="#Frp内存穿透" class="headerlink" title="Frp内存穿透"></a>Frp内存穿透</h1><p><a href="https://github.com/fatedier/frp" target="_blank">  <em>Frp Github地址</em></a><br><a href="https://www.jianshu.com/p/9c9b7ebc6e2a" target="_blank" rel="noopener"> 利用frp远程控制Windows</a></p>
+<h2 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h2><p>服务器端:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_addr &#x3D; 0.0.0.0 # 可以访问frp的目标IP地址，0.0.0.0为不限制</span><br><span class="line">bind_port &#x3D; 5443 # tcp主要端口</span><br><span class="line">kcp_bind_port &#x3D; 5443 # kcp端口(使用的是udp)，可以和tcp端口相同</span><br><span class="line">bind_udp_port &#x3D; 7001 # 打开一个udp端口，以便使用p2p等功能</span><br><span class="line">dashboard_port &#x3D; 6443 # web控制台访问端口，如果不打算用控制台，可以不用设置</span><br><span class="line">dashboard_user &#x3D; admin # web控制台的用户名，建议更改</span><br><span class="line">dashboard_pwd &#x3D; xxxxxxxx # web控制台的登录密码</span><br><span class="line">vhost_http_port &#x3D; 82 # 如果不打算在VPS上架设网站，这里可以用80端口</span><br><span class="line">vhost_https_port &#x3D; 444 # https的代理端口，需要证书，配置较复杂，如果VPS上不架设网站，这里可以用443端口</span><br><span class="line">log_file &#x3D; &#x2F;dev&#x2F;null # 不生成log</span><br><span class="line">log_level &#x3D; error</span><br><span class="line">log_max_days &#x3D; 3</span><br><span class="line">privilege_token &#x3D; xxxxxxxxxxxxxxxx # 这里是认证令牌，自用的话必须设置</span><br><span class="line">privilege_allow_ports &#x3D; 1-65535 # 可限制frps使用的端口范围，该范围需要在VPS的防火墙中打开</span><br><span class="line">max_pool_count &#x3D; 50 #自用的话50足够了</span><br><span class="line">tcp_mux &#x3D; true</span><br><span class="line">subdomain_host &#x3D; xxx.com #这里可以用A记录绑定VPS的IP</span><br></pre></td></tr></table></figure>
+<p>启动方法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;frps -c .&#x2F;frps.ini</span><br></pre></td></tr></table></figure>
+<p>客户端A（被访问端）：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr &#x3D; xxx.xxx.xxx.xxx # VPS的IP或绑定的域名</span><br><span class="line">server_port &#x3D; 5443</span><br><span class="line">privilege_token &#x3D; xxxxxxxxxxxxxxxx # 之前frps.ini中对应的令牌</span><br><span class="line">protocol &#x3D; kcp # 这里可以是tcp或kcp</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type &#x3D; tcp # 这里不要因为前面设置了kcp就填上kcp</span><br><span class="line">local_ip &#x3D; 127.0.0.1 # 因为是本机，所以这样就可以了</span><br><span class="line">local_port &#x3D; 22 本地路由器A的ssh端口，因为会暴露出来，建议从该设备中更改端口</span><br><span class="line">remote_port &#x3D; 50022 # 会打开新的VPS端口，请确定防火墙通过</span><br><span class="line">use_encryption &#x3D; false # 是否加密，一般不需要</span><br><span class="line">use_compression &#x3D; false # 是否压缩，会影响CPU使用</span><br><span class="line"></span><br><span class="line">[sync]</span><br><span class="line">type &#x3D; http</span><br><span class="line">local_ip &#x3D; 127.0.0.1</span><br><span class="line">local_port &#x3D; 8384 # Syncthing的端口</span><br><span class="line">use_encryption &#x3D; false</span><br><span class="line">use_compression &#x3D; true</span><br><span class="line">subdomain &#x3D; sync # 这里如果不指定，将使用上面方括号内的服务名为二级域名；如果VPS中没指定subdomain_host，则这里需要用custom_domains来指定一个访问域名，该域名应当解析到VPS上</span><br><span class="line"></span><br><span class="line">[p2p_ssh] # 这里配置的p2p是可以穿透VPS，让两台设备直接相连，这才是我想要的</span><br><span class="line">type &#x3D; xtcp # 会使用上面的7001端口</span><br><span class="line">sk &#x3D; heartnn # 这里的字符也会在电脑B中设置，类似于令牌之类的</span><br><span class="line">local_ip &#x3D; 127.0.0.1</span><br><span class="line">#win默认端口为3389，mac为5900</span><br><span class="line">local_port &#x3D; 22</span><br><span class="line">#可以看到此处不需要remote port</span><br></pre></td></tr></table></figure>
+<p>启动方法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;frpc -c .&#x2F;frps.ini</span><br></pre></td></tr></table></figure>
+<p>客户端B（访问A）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[common] # 与上面相同即可</span><br><span class="line">server_addr &#x3D; xxx.xxx.xxx.xxx</span><br><span class="line">server_port &#x3D; 5443</span><br><span class="line">privilege_token &#x3D; xxxxxxxxxxxxxxxx</span><br><span class="line">protocol &#x3D; kcp</span><br><span class="line"></span><br><span class="line">[p2p_ssh_visitor] # 这里是上面对应的p2p访问者配置</span><br><span class="line">type &#x3D; xtcp</span><br><span class="line">role &#x3D; visitor # 访问者</span><br><span class="line">server_name &#x3D; p2p_ssh # 对应A中的服务名称</span><br><span class="line">sk &#x3D; heartnn</span><br><span class="line">bind_addr &#x3D; 127.0.0.1 # 在电脑B本地访问</span><br><span class="line">bind_port &#x3D; 50022 # 这里是电脑B本地端口，与其他无关</span><br></pre></td></tr></table></figure>
+<p>启动方法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;frpc -c .&#x2F;frps.ini</span><br></pre></td></tr></table></figure>
+<h2 id="下面提供两种配置方案："><a href="#下面提供两种配置方案：" class="headerlink" title="下面提供两种配置方案："></a>下面提供两种配置方案：</h2><h3 id="简单配置方案"><a href="#简单配置方案" class="headerlink" title="简单配置方案"></a>简单配置方案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">服务器端：</span><br><span class="line">[common]</span><br><span class="line">bind_port &#x3D; 7000</span><br><span class="line">dashboard_port &#x3D; 17888</span><br><span class="line">dashboard_user &#x3D; admin</span><br><span class="line">dashboard_pwd &#x3D; admin</span><br><span class="line">auto_token &#x3D; 111</span><br><span class="line"></span><br><span class="line">客户端（被访问端）：</span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; xx.xx.xx.xx</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line">auto_token &#x3D; 111</span><br><span class="line"></span><br><span class="line">[remote]</span><br><span class="line">type &#x3D; tcp</span><br><span class="line">local_ip &#x3D; 127.0.0.1</span><br><span class="line">local_port &#x3D; 3389</span><br><span class="line">remote_port &#x3D; 70001</span><br><span class="line"></span><br><span class="line">访问端：</span><br><span class="line">可以直接打开远程控制：</span><br><span class="line">输入 xx.xx.xx.xx:7001访问</span><br></pre></td></tr></table></figure>
+<h3 id="安全配置方案"><a href="#安全配置方案" class="headerlink" title="安全配置方案"></a>安全配置方案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">服务器端：</span><br><span class="line">[common]</span><br><span class="line">bind_port &#x3D; 7000</span><br><span class="line">dashboard_port &#x3D; 17888</span><br><span class="line">dashboard_user &#x3D; admin</span><br><span class="line">dashboard_pwd &#x3D; admin</span><br><span class="line">auto_token &#x3D; 111</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">客户端（被访问端）：</span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; xx.xx.xx.xx</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line">auto_token &#x3D; 111</span><br><span class="line"></span><br><span class="line">[wjj]</span><br><span class="line">type &#x3D; stcp</span><br><span class="line">local_ip &#x3D; 127.0.0.1</span><br><span class="line">sk &#x3D; 1111</span><br><span class="line">local_port &#x3D; 3389</span><br><span class="line"></span><br><span class="line">访问端：</span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 106.75.77.68</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line">auto_token &#x3D; 111</span><br><span class="line"></span><br><span class="line">[wjj_visitor]</span><br><span class="line">type &#x3D; stcp</span><br><span class="line">role &#x3D; visitor</span><br><span class="line">server_name &#x3D; wjj</span><br><span class="line">sk &#x3D; 1111</span><br><span class="line">bind_addr &#x3D; 127.0.0.1</span><br><span class="line">bind_port &#x3D; 16667</span><br></pre></td></tr></table></figure>
+<p>都启动后，访问输入地址为： <em>127.0.0.1:16667</em><br>点对点xtcp还未成功运行，方法可以见github官方说明。</p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Frp内存穿透"><span class="toc-text">Frp内存穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置方法"><span class="toc-text">配置方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面提供两种配置方案："><span class="toc-text">下面提供两种配置方案：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单配置方案"><span class="toc-text">简单配置方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全配置方案"><span class="toc-text">安全配置方案</span></a></li></ol></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2020/04/06/linux%E4%BD%BF%E7%94%A8/" class="prev">&larr; Prev post linux使用</a>
+  
+
+  
+
+  
+    <a href="/2020/04/06/oneindex/" class="next">Next post oneindex &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by JJ Wang using
+      <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random" target="_blank" rel="noopener">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":1500000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

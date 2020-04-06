@@ -1,0 +1,423 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="JJ Wang">
+  
+  
+  
+  
+    <meta name="description" content="运行环境搭建MACZSHBREW  
+
+LinuxZSHNVMVPS 
+
+NVM安装NVM Gitub  
+1curl -o- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.2&#x2F;install.sh | bash
+1wget -qO- https:&#x2F;&#x2F;raw...">
+  
+  <title>系统环境搭建 [ Wang's Blog ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2020/04/06/VPS/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        VPS
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2020/04/06/linux%E4%BD%BF%E7%94%A8/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        linux使用
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4"/>
+          <div id="homelink">Wang's Blog</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>系统环境搭建</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2020-04-06</span>
+      
+        <span id = "post-title-updated">Updated at 2020-04-06</span>
+      
+      
+      <span id = "post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/VPS/">VPS</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/nvm/">nvm</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/zsh/">zsh</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/brew/">brew</a>
+      
+      </span>
+      
+    </p>
+    
+    <h1 id="运行环境搭建"><a href="#运行环境搭建" class="headerlink" title="运行环境搭建"></a>运行环境搭建</h1><h2 id="MAC"><a href="#MAC" class="headerlink" title="MAC"></a>MAC</h2><p><a href="#mzsh">ZSH</a><br><a href="#brew">BREW</a>  </p>
+<hr>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p><a href="#lzsh">ZSH</a><br><a href="#lnvm">NVM</a><br><a href="#vps">VPS</a> </p>
+<hr>
+<p><span id="#lnvm">NVM安装</span><br><a href="https://github.com/nvm-sh/nvm#install-script" target="_blank">NVM Gitub</a>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.2&#x2F;install.sh | bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.2&#x2F;install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>安装后根据提示加入环境变量  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export NVM_DIR&#x3D;&quot;$HOME&#x2F;.nvm&quot;</span><br><span class="line">[ -s &quot;$NVM_DIR&#x2F;nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR&#x2F;nvm.sh&quot;  # This loads nvm</span><br><span class="line">[ -s &quot;$NVM_DIR&#x2F;bash_completion&quot; ] &amp;&amp; \. &quot;$NVM_DIR&#x2F;bash_completion&quot;  # This loads nvm bash_completion</span><br></pre></td></tr></table></figure>
+<p>指令  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nvm install node 安装最新版 Node</span><br><span class="line">nvm install iojs 安装最新版 iojs</span><br><span class="line">nvm install unstable 安装最新不稳定版本的 Node</span><br><span class="line">nvm list 或者 nvm ls 查看node的安装版本</span><br><span class="line">nvm uninstall 6.9.0 删除6.9.0版本的node</span><br><span class="line">nvm use 6.9.0 使用这个6.9.0版本的node</span><br><span class="line">nvm ls-remote 罗列远程的node版本</span><br><span class="line">nvm current 查看当前正在使用的node版本</span><br><span class="line">nvm alias default v4.3.0 切换v.4.3.0为默认版本,每次新建的命令行中就是默认的版本了</span><br><span class="line">npm list --depth&#x3D;0 -g 查看全局都安装了那些npm的包</span><br></pre></td></tr></table></figure>
+<hr>
+<p><span id="brew">Homebrew</span><br>brew 指令  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">brew list                    #列出所有安装的包</span><br><span class="line">brew search + 包名     #在源中搜索期望的包</span><br><span class="line">brew info + 包名         #在源中搜索期望的包，并且打印更详细的信息</span><br><span class="line">brew install + 包名      #安装对应的包</span><br><span class="line">brew uninstall + 包名  #卸载已经安装的包</span><br><span class="line">brew updata               #升级brew</span><br></pre></td></tr></table></figure>
+<p>brew 服务启动关闭  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">brew services list  # 查看使用brew安装的服务列表</span><br><span class="line">brew services run formula|--all  # 启动服务（仅启动不注册）</span><br><span class="line">brew services start formula|--all  # 启动服务，并注册</span><br><span class="line">brew services stop formula|--all   # 停止服务，并取消注册</span><br><span class="line">brew services restart formula|--all  # 重启服务，并注册</span><br><span class="line">brew services cleanup  # 清除已卸载应用的无用的配置</span><br></pre></td></tr></table></figure>
+<p>brew tap<br><a href="https://segmentfault.com/a/1190000012826983" target="_blank" rel="noopener">brew tap</a><br>安装jdk1.8  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap adoptopenjdk&#x2F;openjdk</span><br><span class="line">brew cask install adoptopenjdk8</span><br></pre></td></tr></table></figure>
+<p>安装mongodb  <a href="https://github.com/mongodb/homebrew-brew" target="_blank">Mongodb Brew</a><br>可以在zsh配置文件中配置别名alias<br><br/><br>若是速度慢可以切换源  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 替换brew.git:</span><br><span class="line">$ cd &quot;$(brew --repo)&quot;</span><br><span class="line"># 中国科大:</span><br><span class="line">$ git remote set-url origin https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;brew.git</span><br><span class="line"># 清华大学:</span><br><span class="line">$ git remote set-url origin https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;homebrew&#x2F;brew.git</span><br><span class="line"></span><br><span class="line"># 替换homebrew-core.git:</span><br><span class="line">$ cd &quot;$(brew --repo)&#x2F;Library&#x2F;Taps&#x2F;homebrew&#x2F;homebrew-core&quot;</span><br><span class="line"># 中国科大:</span><br><span class="line">$ git remote set-url origin https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew-core.git</span><br><span class="line"># 清华大学:</span><br><span class="line">$ git remote set-url origin https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;homebrew&#x2F;homebrew-core.git</span><br><span class="line"></span><br><span class="line"># 替换homebrew-bottles:</span><br><span class="line"># 中国科大:</span><br><span class="line">$ echo &#39;export HOMEBREW_BOTTLE_DOMAIN&#x3D;https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew-bottles&#39; &gt;&gt; ~&#x2F;.bash_profile</span><br><span class="line">$ source ~&#x2F;.bash_profile</span><br><span class="line"># 清华大学:</span><br><span class="line">$ echo &#39;export HOMEBREW_BOTTLE_DOMAIN&#x3D;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;homebrew-bottles&#39; &gt;&gt; ~&#x2F;.bash_profile</span><br><span class="line">$ source ~&#x2F;.bash_profile</span><br><span class="line"></span><br><span class="line"># 应用生效:</span><br><span class="line">$ brew update</span><br></pre></td></tr></table></figure>
+<hr>
+<p><span id="mzsh">MacZSH</span><br>安装ZSH  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install zsh</span><br></pre></td></tr></table></figure>
+<p>查看shell  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;shells</span><br></pre></td></tr></table></figure>
+<p>切换zsh  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;bin&#x2F;zsh root</span><br></pre></td></tr></table></figure>
+<br/>
+安装oh my zsh  
+方法1:  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)</span><br></pre></td></tr></table></figure>
+方法2:  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(wget https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O -)</span><br></pre></td></tr></table></figure>
+<br/>
+**重启Shell生效**  
+<br/>
+环境变量可以在 *～/.bash_proffile*设置，在 *~/.zshrc*中 *source ~/.bash_profile*  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"># If you come from bash you might have to change your $PATH.</span><br><span class="line"># export PATH&#x3D;$HOME&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;bin:$PATH</span><br><span class="line"></span><br><span class="line"># Path to your oh-my-zsh installation.</span><br><span class="line">export ZSH&#x3D;&quot;&#x2F;Users&#x2F;wangjinjian&#x2F;.oh-my-zsh&quot;</span><br><span class="line"></span><br><span class="line"># Set name of the theme to load --- if set to &quot;random&quot;, it will</span><br><span class="line"># load a random theme each time oh-my-zsh is loaded, in which case,</span><br><span class="line"># to know which specific one was loaded, run: echo $RANDOM_THEME</span><br><span class="line"># See https:&#x2F;&#x2F;github.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;wiki&#x2F;Themes</span><br><span class="line">ZSH_THEME&#x3D;&quot;ys&quot;</span><br><span class="line"></span><br><span class="line"># Set list of themes to pick from when loading at random</span><br><span class="line"># Setting this variable when ZSH_THEME&#x3D;random will cause zsh to load</span><br><span class="line"># a theme from this variable instead of looking in ~&#x2F;.oh-my-zsh&#x2F;themes&#x2F;</span><br><span class="line"># If set to an empty array, this variable will have no effect.</span><br><span class="line"># ZSH_THEME_RANDOM_CANDIDATES&#x3D;( &quot;robbyrussell&quot; &quot;agnoster&quot; )</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to use case-sensitive completion.</span><br><span class="line"># CASE_SENSITIVE&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to use hyphen-insensitive completion.</span><br><span class="line"># Case-sensitive completion must be off. _ and - will be interchangeable.</span><br><span class="line"># HYPHEN_INSENSITIVE&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to disable bi-weekly auto-update checks.</span><br><span class="line"># DISABLE_AUTO_UPDATE&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to automatically update without prompting.</span><br><span class="line"># DISABLE_UPDATE_PROMPT&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to change how often to auto-update (in days).</span><br><span class="line"># export UPDATE_ZSH_DAYS&#x3D;13</span><br><span class="line"></span><br><span class="line"># Uncomment the following line if pasting URLs and other text is messed up.</span><br><span class="line"># DISABLE_MAGIC_FUNCTIONS&#x3D;true</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to disable colors in ls.</span><br><span class="line"># DISABLE_LS_COLORS&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to disable auto-setting terminal title.</span><br><span class="line"># DISABLE_AUTO_TITLE&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to enable command auto-correction.</span><br><span class="line"># ENABLE_CORRECTION&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line to display red dots whilst waiting for completion.</span><br><span class="line"># COMPLETION_WAITING_DOTS&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line if you want to disable marking untracked files</span><br><span class="line"># under VCS as dirty. This makes repository status check for large repositories</span><br><span class="line"># much, much faster.</span><br><span class="line"># DISABLE_UNTRACKED_FILES_DIRTY&#x3D;&quot;true&quot;</span><br><span class="line"></span><br><span class="line"># Uncomment the following line if you want to change the command execution time</span><br><span class="line"># stamp shown in the history command output.</span><br><span class="line"># You can set one of the optional three formats:</span><br><span class="line"># &quot;mm&#x2F;dd&#x2F;yyyy&quot;|&quot;dd.mm.yyyy&quot;|&quot;yyyy-mm-dd&quot;</span><br><span class="line"># or set a custom format using the strftime function format specifications,</span><br><span class="line"># see &#39;man strftime&#39; for details.</span><br><span class="line"># HIST_STAMPS&#x3D;&quot;mm&#x2F;dd&#x2F;yyyy&quot;</span><br><span class="line"></span><br><span class="line"># Would you like to use another custom folder than $ZSH&#x2F;custom?</span><br><span class="line"># ZSH_CUSTOM&#x3D;&#x2F;path&#x2F;to&#x2F;new-custom-folder</span><br><span class="line"></span><br><span class="line"># Which plugins would you like to load?</span><br><span class="line"># Standard plugins can be found in ~&#x2F;.oh-my-zsh&#x2F;plugins&#x2F;*</span><br><span class="line"># Custom plugins may be added to ~&#x2F;.oh-my-zsh&#x2F;custom&#x2F;plugins&#x2F;</span><br><span class="line"># Example format: plugins&#x3D;(rails git textmate ruby lighthouse)</span><br><span class="line"># Add wisely, as too many plugins slow down shell startup.</span><br><span class="line">plugins&#x3D;(git zsh-autosuggestions autojump zsh-syntax-highlighting sublime extract)</span><br><span class="line"></span><br><span class="line">source $ZSH&#x2F;oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"># User configuration</span><br><span class="line">source ~&#x2F;.bash_profile</span><br><span class="line"># export MANPATH&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;man:$MANPATH&quot;</span><br><span class="line"></span><br><span class="line"># You may need to manually set your language environment</span><br><span class="line"># export LANG&#x3D;en_US.UTF-8</span><br><span class="line"></span><br><span class="line"># Preferred editor for local and remote sessions</span><br><span class="line"># if [[ -n $SSH_CONNECTION ]]; then</span><br><span class="line">#   export EDITOR&#x3D;&#39;vim&#39;</span><br><span class="line"># else</span><br><span class="line">#   export EDITOR&#x3D;&#39;mvim&#39;</span><br><span class="line"># fi</span><br><span class="line"></span><br><span class="line"># Compilation flags</span><br><span class="line"># export ARCHFLAGS&#x3D;&quot;-arch x86_64&quot;</span><br><span class="line"></span><br><span class="line"># Set personal aliases, overriding those provided by oh-my-zsh libs,</span><br><span class="line"># plugins, and themes. Aliases can be placed here, though oh-my-zsh</span><br><span class="line"># users are encouraged to define aliases within the ZSH_CUSTOM folder.</span><br><span class="line"># For a full list of active aliases, run &#96;alias&#96;.</span><br><span class="line">#</span><br><span class="line"># Example aliases</span><br><span class="line"># alias zshconfig&#x3D;&quot;mate ~&#x2F;.zshrc&quot;</span><br><span class="line"># alias ohmyzsh&#x3D;&quot;mate ~&#x2F;.oh-my-zsh&quot;</span><br><span class="line">alias python&#x3D;&quot;python3&quot;</span><br><span class="line">alias bs&#x3D;&quot;brew services&quot;</span><br><span class="line">alias aws&#x3D;&quot;ssh -i .ssh&#x2F;wangjj.pem ec2-user@ec2-100-24-23-169.compute-1.amazonaws.com&quot;</span><br><span class="line">source &quot;$ZSH_CUSTOM&#x2F;plugins&#x2F;zsh-syntax-highlighting&#x2F;zsh-syntax-highlighting.zsh&quot;</span><br></pre></td></tr></table></figure>
+<br/>
+<span id="zsh插件"> **zsh插件**</span>  
+默认插件 z extract st  
+<br/>
+其他好用的插件  
+zsh-autosuggestions  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $ZSH_CUSTOM&#x2F;plugins&#x2F;zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+zsh-syntax-highlighting  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+------------------------------------------------------------------------
+
+
+
+<p><span id="lzsh">LinuxZSH</span><br>安装ZSH  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">centos:</span><br><span class="line">sudo yum install -y zsh</span><br><span class="line">ubuntu:</span><br><span class="line">sudo apt-get install -y zsh</span><br></pre></td></tr></table></figure>
+<p>查看shell  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;shells</span><br></pre></td></tr></table></figure>
+<p>切换zsh  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;bin&#x2F;zsh root</span><br></pre></td></tr></table></figure>
+<br/>
+安装oh my zsh  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+<br/>
+**重启Shell生效**  
+[插件](#zsh插件)
+----------------------------------------------------------------------
+
+<p><span id="vps">vps</span><br>v2ray  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;hijkpw&#x2F;scripts&#x2F;master&#x2F;centos_install_v2ray2.sh)</span><br></pre></td></tr></table></figure>
+<p>brook  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N –no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ToyoDAdoubi&#x2F;doubi&#x2F;master&#x2F;brook.sh &amp;&amp; chmod +x brook.sh &amp;&amp; bash brook.sh</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#运行环境搭建"><span class="toc-text">运行环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC"><span class="toc-text">MAC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2020/04/06/VPS/" class="prev">&larr; Prev post VPS</a>
+  
+
+  
+
+  
+    <a href="/2020/04/06/linux%E4%BD%BF%E7%94%A8/" class="next">Next post linux使用 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by JJ Wang using
+      <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random" target="_blank" rel="noopener">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":1500000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

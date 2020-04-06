@@ -1,0 +1,365 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="JJ Wang">
+  
+  
+  
+  
+    <meta name="description" content="Python API接口文档##第一章  数据结构与算法
+1.1解压序列赋值给多个变量解压赋值对象可以为任何可迭代对象：列表、数组、字符串、文件对象、迭代器、生成器丢弃的量可以用_来代替  
+123456789101112data &#x3D; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,(1,2,3)]a,b,c,d&#x3D;data#_ , _ , c, ...">
+  
+  <title>python学习 [ Wang's Blog ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2020/04/07/%E5%B8%B8%E8%A7%81%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        常见安装问题
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4"/>
+          <div id="homelink">Wang's Blog</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>python学习</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2020-04-07</span>
+      
+        <span id = "post-title-updated">Updated at 2020-04-07</span>
+      
+      
+      <span id = "post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/python/">python</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/cookbook/">cookbook</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+      
+      </span>
+      
+    </p>
+    
+    <p><a href="https://docs.python.org/zh-cn/3/c-api/index.html" target="_blank">Python API接口文档</a><br>##第一章  数据结构与算法</p>
+<h3 id="1-1解压序列赋值给多个变量"><a href="#1-1解压序列赋值给多个变量" class="headerlink" title="1.1解压序列赋值给多个变量"></a>1.1解压序列赋值给多个变量</h3><p>解压赋值对象可以为任何可迭代对象：列表、数组、字符串、文件对象、迭代器、生成器<br>丢弃的量可以用_来代替  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data &#x3D; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,(1,2,3)]</span><br><span class="line">a,b,c,d&#x3D;data</span><br><span class="line">#_ , _ , c, d&#x3D;data</span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line">print(c)</span><br><span class="line">print(d)</span><br><span class="line">----</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">(1, 2, 3)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data&#x3D;&quot;ABCD&quot;</span><br><span class="line">a,b,c,d&#x3D;data</span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line">print(c)</span><br><span class="line">print(d)</span><br><span class="line">-----</span><br><span class="line">A</span><br><span class="line">B</span><br><span class="line">C</span><br><span class="line">D</span><br></pre></td></tr></table></figure>
+<h3 id="1-2解压可迭代对象赋值给多个变量"><a href="#1-2解压可迭代对象赋值给多个变量" class="headerlink" title="1.2解压可迭代对象赋值给多个变量"></a>1.2解压可迭代对象赋值给多个变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">record &#x3D; (&#39;ACME&#39;, 50, 123.45, (12, 18, 2012))</span><br><span class="line">name, *_, (*_, year) &#x3D; record</span><br><span class="line">print(name)</span><br><span class="line">print(year)</span><br><span class="line">----</span><br><span class="line">ACME</span><br><span class="line">2012</span><br></pre></td></tr></table></figure>
+<h3 id="1-3保留最后-N-个元素"><a href="#1-3保留最后-N-个元素" class="headerlink" title="1.3保留最后 N 个元素"></a>1.3保留最后 N 个元素</h3><p>collections.deque是一个很好的解决方法<br>deque当队列满了时，会自动删除最旧的元素<br><a href="https://docs.python.org/zh-cn/3/library/collections.html#collections.deque" target="_blank">collctions</a><br>** class collections.deque([iterable[, maxlen]])**</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">双向队列(deque)对象支持以下方法：</span><br><span class="line">append(x)</span><br><span class="line">添加 x 到右端。</span><br><span class="line">appendleft(x)</span><br><span class="line">添加 x 到左端。</span><br><span class="line">clear()</span><br><span class="line">移除所有元素，使其长度为0.</span><br><span class="line">copy()</span><br><span class="line">创建一份浅拷贝。</span><br><span class="line">count(x)</span><br><span class="line">计算deque中个数等于 x 的元素。</span><br><span class="line">extend(iterable)</span><br><span class="line">扩展deque的右侧，通过添加iterable参数中的元素。</span><br><span class="line">extendleft(iterable)</span><br><span class="line">扩展deque的左侧，通过添加iterable参数中的元素。注意，左添加时，在结果中iterable参数中的顺序将被反过来添加。</span><br><span class="line">index(x[, start[, stop]])</span><br><span class="line">返回第 x 个元素（从 start 开始计算，在 stop 之前）。返回第一个匹配，如果没找到的话，升起 ValueError 。</span><br><span class="line">insert(i, x)</span><br><span class="line">在位置 i 插入 x 。</span><br><span class="line">如果插入会导致一个限长deque超出长度 maxlen 的话，就升起一个 IndexError 。</span><br><span class="line">pop()</span><br><span class="line">移去并且返回一个元素，deque最右侧的那一个。如果没有元素的话，就升起 IndexError 索引错误。</span><br><span class="line">popleft()</span><br><span class="line">移去并且返回一个元素，deque最左侧的那一个。如果没有元素的话，就升起 IndexError 索引错误。</span><br><span class="line">remove(value)</span><br><span class="line">移去找到的第一个 value。 如果没有的话就升起 ValueError 。</span><br><span class="line">reverse()</span><br><span class="line">将deque逆序排列。返回 None 。</span><br><span class="line">rotate(n&#x3D;1)</span><br><span class="line">向右循环移动 n 步。 如果 n 是负数，就向左循环。</span><br><span class="line">如果deque不是空的，向右循环移动一步就等价于 d.appendleft(d.pop()) ， 向左循环一步就等价于 d.append(d.popleft()) 。</span><br><span class="line">Deque对象同样提供了一个只读属性:</span><br><span class="line">maxlen</span><br><span class="line">Deque的最大尺寸，如果没有限定的话就是 None 。</span><br></pre></td></tr></table></figure>
+<h3 id="1-4查找最大或最小的-N-个元素"><a href="#1-4查找最大或最小的-N-个元素" class="headerlink" title="1.4查找最大或最小的 N 个元素"></a>1.4查找最大或最小的 N 个元素</h3><p>heapq 模块有两个函数：nlargest() 和 nsmallest() 可以完美解决这个问题<br><a href="https://docs.python.org/zh-cn/3/library/heapq.html#module-heapq" target="_blank">heapq文档</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import heapq nums &#x3D; [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2] </span><br><span class="line">print(heapq.nlargest(3, nums)) # Prints [42, 37, 23] </span><br><span class="line">print(heapq.nsmallest(3, nums)) # Prints [-4, 1, 2]</span><br></pre></td></tr></table></figure>
+<h3 id="1-5实现一个优先级队列"><a href="#1-5实现一个优先级队列" class="headerlink" title="1.5实现一个优先级队列"></a>1.5实现一个优先级队列</h3><p>元组的比较  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; (1, 0, Item(&#39;foo&#39;))</span><br><span class="line">&gt;&gt;&gt; b &#x3D; (5, 1, Item(&#39;bar&#39;))</span><br><span class="line">&gt;&gt;&gt; c &#x3D; (1, 2, Item(&#39;grok&#39;))</span><br><span class="line">&gt;&gt;&gt; a &lt; b </span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; a &lt; c </span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import heapq</span><br><span class="line"></span><br><span class="line">class PriorityQueue:</span><br><span class="line">def __init__(self):</span><br><span class="line">    self._queue &#x3D; []</span><br><span class="line">    self._index &#x3D; 0</span><br><span class="line">def push(self, item, priority):</span><br><span class="line">    heapq.heappush(self._queue, (-priority, self._index, item)) </span><br><span class="line">    self._index +&#x3D; 1</span><br><span class="line"></span><br><span class="line">def pop(self):</span><br><span class="line">    return heapq.heappop(self._queue)[-1]</span><br></pre></td></tr></table></figure>
+<p>heapq.heappush(heap,item)源码  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def heappush(heap, item):</span><br><span class="line">    &quot;&quot;&quot;Push item onto heap, maintaining the heap invariant.&quot;&quot;&quot;</span><br><span class="line">    heap.append(item)</span><br><span class="line">    _siftdown(heap, 0, len(heap)-1)</span><br><span class="line"></span><br><span class="line">def _siftdown(heap, startpos, pos):</span><br><span class="line">    #此处得到的加入的heap的值</span><br><span class="line">    newitem &#x3D; heap[pos]</span><br><span class="line">    #如果pos&#x3D;startpos，说明是只有一个元素，不需要移动</span><br><span class="line">    #此处直接进行比较，用到了元组的比较</span><br><span class="line">    while pos &gt; startpos:</span><br><span class="line">        parentpos &#x3D; (pos - 1) &gt;&gt; 1</span><br><span class="line">        parent &#x3D; heap[parentpos]</span><br><span class="line">        if newitem &lt; parent:</span><br><span class="line">            heap[pos] &#x3D; parent</span><br><span class="line">            pos &#x3D; parentpos</span><br><span class="line">            continue</span><br><span class="line">        break</span><br><span class="line">    heap[pos] &#x3D; newitem</span><br></pre></td></tr></table></figure>
+<h3 id="1-6字典中的键映射多个值"><a href="#1-6字典中的键映射多个值" class="headerlink" title="1.6字典中的键映射多个值"></a>1.6字典中的键映射多个值</h3><ol>
+<li>如果直接用字典，value可以使用集合</li>
+<li>可以使用collections.defaultdict<a href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict" target="_blank">collctions</a>  <h3 id="1-7字典排序"><a href="#1-7字典排序" class="headerlink" title="1.7字典排序"></a>1.7字典排序</h3><a href="https://docs.python.org/zh-cn/3/library/functions.html#zip" target="_blank">zip()</a>函数将键和值反转过来，以及min()、max()    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;a &#x3D; [1,2,3]</span><br><span class="line">&gt;&gt;&gt; b &#x3D; [4,5,6]</span><br><span class="line">&gt;&gt;&gt; c &#x3D; [4,5,6,7,8]</span><br><span class="line">&gt;&gt;&gt; zipped &#x3D; zip(a,b)     # 打包为元组的列表</span><br><span class="line">[(1, 4), (2, 5), (3, 6)]</span><br><span class="line">&gt;&gt;&gt; zip(a,c)              # 元素个数与最短的列表一致</span><br><span class="line">[(1, 4), (2, 5), (3, 6)]</span><br><span class="line">&gt;&gt;&gt; zip(*zipped)          # 与 zip 相反，*zipped 可理解为解压，返回二维矩阵式</span><br><span class="line">[(1, 2, 3), (4, 5, 6)]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prices &#x3D; &#123; &#39;ACME&#39;: 45.23, &#39;AAPL&#39;: 612.78, &#39;IBM&#39;: 205.55, &#39;HPQ&#39;: 37.20, &#39;FB&#39;: 10.75 &#125;</span><br><span class="line">min(prices, key&#x3D;lambda k: prices[k]) # Returns &#39;FB&#39; </span><br><span class="line">max(prices, key&#x3D;lambda k: prices[k]) # Returns &#39;AAPL&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="1-8字典的运算"><a href="#1-8字典的运算" class="headerlink" title="1.8字典的运算"></a>1.8字典的运算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; &#123; &#39;x&#39; : 1, &#39;y&#39; : 2, &#39;z&#39; : 3 &#125;</span><br><span class="line">b &#x3D; &#123; &#39;w&#39; : 10, &#39;x&#39; : 11, &#39;y&#39; : 2 &#125;</span><br><span class="line"># Find keys in common </span><br><span class="line">a.keys() &amp; b.keys() # &#123; &#39;x&#39;, &#39;y&#39; &#125; </span><br><span class="line"># Find keys in a that are not in b </span><br><span class="line">a.keys() - b.keys() # &#123; &#39;z&#39; &#125; </span><br><span class="line"># Find (key,value) pairs in common </span><br><span class="line">a.items() &amp; b.items() # &#123; (&#39;y&#39;, 2) &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-10删除序列相同元素并保持顺序"><a href="#1-10删除序列相同元素并保持顺序" class="headerlink" title="1.10删除序列相同元素并保持顺序"></a>1.10删除序列相同元素并保持顺序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def dedupe(items, key&#x3D;None):</span><br><span class="line">    seen &#x3D; set()</span><br><span class="line">    for item in items:</span><br><span class="line">        #如果key是None，则为item，否则为key(item)，此处key为lambada表达式</span><br><span class="line">        val &#x3D; item if key is None else key(item)</span><br><span class="line">        if val not in seen:</span><br><span class="line">            yield item</span><br><span class="line">            seen.add(val)</span><br><span class="line">a &#x3D; [ &#123;&#39;x&#39;:1, &#39;y&#39;:2&#125;, &#123;&#39;x&#39;:1, &#39;y&#39;:3&#125;, &#123;&#39;x&#39;:1, &#39;y&#39;:2&#125;, &#123;&#39;x&#39;:2, &#39;y&#39;:4&#125;]</span><br><span class="line">print(list(dedupe(a, key&#x3D;lambda d: (d[&#39;x&#39;],d[&#39;y&#39;]))))</span><br><span class="line">key &#x3D; lambda d:(d[&#39;x&#39;],d[&#39;y&#39;])</span><br><span class="line">dic1&#x3D;&#123;&#39;x&#39;:1,&#39;y&#39;:2&#125;</span><br><span class="line">print(key(dic1))</span><br><span class="line">-------------</span><br><span class="line">[&#123;&#39;x&#39;: 1, &#39;y&#39;: 2&#125;, &#123;&#39;x&#39;: 1, &#39;y&#39;: 3&#125;, &#123;&#39;x&#39;: 2, &#39;y&#39;: 4&#125;]</span><br><span class="line">(1, 2)</span><br></pre></td></tr></table></figure>
+如果用set()也可以消除重复元素，但不能保持顺序  <h3 id="1-11命名切片"><a href="#1-11命名切片" class="headerlink" title="1.11命名切片"></a>1.11命名切片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; items &#x3D; [0, 1, 2, 3, 4, 5, 6]</span><br><span class="line">&gt;&gt;&gt; a &#x3D; slice(2, 4)</span><br><span class="line">&gt;&gt;&gt; items[2:4]</span><br><span class="line">[2, 3]</span><br><span class="line">&gt;&gt;&gt; items[a]</span><br><span class="line">[2, 3]</span><br><span class="line">&gt;&gt;&gt; items[a] &#x3D; [10,11]</span><br><span class="line">&gt;&gt;&gt; items</span><br><span class="line">[0, 1, 10, 11, 4, 5, 6]</span><br><span class="line">&gt;&gt;&gt; del items[a]</span><br><span class="line">&gt;&gt;&gt; items</span><br><span class="line">[0, 1, 4, 5, 6]</span><br><span class="line">#&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">#a &#x3D; slice(start,stop,step)</span><br><span class="line">a &#x3D; slice(0,10,2)</span><br><span class="line">for i in range(*a.indices(5)):</span><br><span class="line">    print(i)</span><br><span class="line">-------</span><br><span class="line">0</span><br><span class="line">2</span><br><span class="line">4</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><em>和*</em>的使用方法  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 　　该位置接受任意多个非关键字（non-keyword）参数，在函数中将其转化为元组（1,2,3,4）</span><br><span class="line">**　  该位置接受任意多个关键字（keyword）参数，在函数**位置上转化为词典 [key:value, key:value ]</span><br><span class="line">单星号变量不仅仅能够用在函数的参数传递中，实际上对一个普通变量使用单星号前缀，能够将这个变量拆分成单个元素。</span><br></pre></td></tr></table></figure>
+<h3 id="1-12序列中出现次数最多的元素"><a href="#1-12序列中出现次数最多的元素" class="headerlink" title="1.12序列中出现次数最多的元素"></a>1.12序列中出现次数最多的元素</h3><p><a href="https://docs.python.org/zh-cn/3/library/collections.html#collections.Counter" target="_blank">collections.Counter</a></p>
+<h3 id="1-13通过某个关键字排序一个字典列表"><a href="#1-13通过某个关键字排序一个字典列表" class="headerlink" title="1.13通过某个关键字排序一个字典列表"></a>1.13通过某个关键字排序一个字典列表</h3><p>适用operator模块的itemgetter函数  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">rows &#x3D; [</span><br><span class="line">&#123;&#39;fname&#39;: &#39;Brian&#39;, &#39;lname&#39;: &#39;Jones&#39;, &#39;uid&#39;: 1003&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;David&#39;, &#39;lname&#39;: &#39;Beazley&#39;, &#39;uid&#39;: 1002&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;John&#39;, &#39;lname&#39;: &#39;Cleese&#39;, &#39;uid&#39;: 1001&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;Big&#39;, &#39;lname&#39;: &#39;Jones&#39;, &#39;uid&#39;: 1004&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">from operator import itemgetter</span><br><span class="line">rows_by_fname &#x3D; sorted(rows, key&#x3D;itemgetter(&#39;fname&#39;))</span><br><span class="line">rows_by_uid &#x3D; sorted(rows, key&#x3D;itemgetter(&#39;uid&#39;))</span><br><span class="line">#rows_by_fname &#x3D; sorted(rows, key&#x3D;lambda r: r[&#39;fname&#39;])</span><br><span class="line">#rows_by_lfname &#x3D; sorted(rows, key&#x3D;lambda r: (r[&#39;lname&#39;],r[&#39;fname&#39;]))</span><br><span class="line">print(rows_by_fname)</span><br><span class="line">print(rows_by_uid)</span><br><span class="line">----------</span><br><span class="line">[&#123;&#39;fname&#39;: &#39;Big&#39;, &#39;uid&#39;: 1004, &#39;lname&#39;: &#39;Jones&#39;&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;Brian&#39;, &#39;uid&#39;: 1003, &#39;lname&#39;: &#39;Jones&#39;&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;David&#39;, &#39;uid&#39;: 1002, &#39;lname&#39;: &#39;Beazley&#39;&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;John&#39;, &#39;uid&#39;: 1001, &#39;lname&#39;: &#39;Cleese&#39;&#125;]</span><br><span class="line">[&#123;&#39;fname&#39;: &#39;John&#39;, &#39;uid&#39;: 1001, &#39;lname&#39;: &#39;Cleese&#39;&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;David&#39;, &#39;uid&#39;: 1002, &#39;lname&#39;: &#39;Beazley&#39;&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;Brian&#39;, &#39;uid&#39;: 1003, &#39;lname&#39;: &#39;Jones&#39;&#125;,</span><br><span class="line">&#123;&#39;fname&#39;: &#39;Big&#39;, &#39;uid&#39;: 1004, &#39;lname&#39;: &#39;Jones&#39;&#125;]</span><br></pre></td></tr></table></figure>
+<h3 id="1-14排序不支持原生比较的对象"><a href="#1-14排序不支持原生比较的对象" class="headerlink" title="1.14排序不支持原生比较的对象"></a>1.14排序不支持原生比较的对象</h3><p>1.适用lambada  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class User:</span><br><span class="line">    def __init__(self, user_id):</span><br><span class="line">    self.user_id &#x3D; user_id</span><br><span class="line">def __repr__(self):</span><br><span class="line">    return &#39;User(&#123;&#125;)&#39;.format(self.user_id)</span><br><span class="line">def sort_notcompare():</span><br><span class="line">    users &#x3D; [User(23), User(3), User(99)]</span><br><span class="line">    print(users)</span><br><span class="line">    print(sorted(users, key&#x3D;lambda u: u.user_id))</span><br></pre></td></tr></table></figure>
+<p>2.使用operator.attrgetter()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sorted(users, key&#x3D;attrgetter(&#39;user_id&#39;))</span><br></pre></td></tr></table></figure>
+<h3 id="1-15通过某个字段将记录分组"><a href="#1-15通过某个字段将记录分组" class="headerlink" title="1.15通过某个字段将记录分组"></a>1.15通过某个字段将记录分组</h3><p>使用itertools.groupby() 函数<br>一个非常重要的准备步骤是要根据指定的字段将数据排序。因为groupby() 仅仅检查连续的元素，如果事先并没有排序完成的话，分组函数将得不到想要的结果。  </p>
+<h3 id="1-16过滤序列元素"><a href="#1-16过滤序列元素" class="headerlink" title="1.16过滤序列元素"></a>1.16过滤序列元素</h3><p>1.最简单的过滤序列元素的方法就是使用列表推导。   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; mylist &#x3D; [1, 4, -5, 10, -7, 2, 3, -1]</span><br><span class="line">&gt;&gt;&gt; [n for n in mylist if n &gt; 0]</span><br><span class="line">[1, 4, 10, 2, 3]</span><br><span class="line">&gt;&gt;&gt; [n for n in mylist if n &lt; 0]</span><br><span class="line">[-5, -7, -1]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>2.使用内建的filter() 函数  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">values &#x3D; [&#39;1&#39;, &#39;2&#39;, &#39;-3&#39;, &#39;-&#39;, &#39;4&#39;, &#39;N&#x2F;A&#39;, &#39;5&#39;]</span><br><span class="line">def is_int(val):</span><br><span class="line">    try:</span><br><span class="line">        x &#x3D; int(val)</span><br><span class="line">        return True</span><br><span class="line">    except ValueError:</span><br><span class="line">        return False</span><br><span class="line">ivals &#x3D; list(filter(is_int, values))</span><br><span class="line">print(ivals)</span><br><span class="line"># Outputs [&#39;1&#39;, &#39;2&#39;, &#39;-3&#39;, &#39;4&#39;, &#39;5&#39;]</span><br></pre></td></tr></table></figure>
+<h3 id="1-18映射名称到序列元素"><a href="#1-18映射名称到序列元素" class="headerlink" title="1.18映射名称到序列元素"></a>1.18映射名称到序列元素</h3><p><a href="https://docs.python.org/zh-cn/3/library/collections.html#collections.namedtuple" target="_blank">collections.namedtuple()</a><br>尽管namedtuple 的实例看起来像一个普通的类实例，但是它跟元组类型是可交换的，支持所有的普通元组操作，比如索引和解压。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from collections import namedtuple</span><br><span class="line">Stock &#x3D; namedtuple(&#39;Stock&#39;, [&#39;name&#39;, &#39;shares&#39;, &#39;price&#39;])</span><br><span class="line">def compute_cost(records):</span><br><span class="line">    total &#x3D; 0.0</span><br><span class="line">    for rec in records:</span><br><span class="line">        s &#x3D; Stock(*rec)</span><br><span class="line">    total +&#x3D; s.shares * s.price</span><br><span class="line">    return total</span><br></pre></td></tr></table></figure>
+<p>namedtuple实际上就是元组，如果要更改数据需要使用_replace()  </p>
+<h3 id="1-20合并多个字典或映射"><a href="#1-20合并多个字典或映射" class="headerlink" title="1.20合并多个字典或映射"></a>1.20合并多个字典或映射</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; values &#x3D; ChainMap()</span><br><span class="line">&gt;&gt;&gt; values[&#39;x&#39;] &#x3D; 1</span><br><span class="line">&gt;&gt;&gt; # Add a new mapping</span><br><span class="line">&gt;&gt;&gt; values &#x3D; values.new_child()</span><br><span class="line">&gt;&gt;&gt; values[&#39;x&#39;] &#x3D; 2</span><br><span class="line">&gt;&gt;&gt; # Add a new mapping</span><br><span class="line">&gt;&gt;&gt; values &#x3D; values.new_child()</span><br><span class="line">&gt;&gt;&gt; values[&#39;x&#39;] &#x3D; 3</span><br><span class="line">&gt;&gt;&gt; values</span><br><span class="line">ChainMap(&#123;&#39;x&#39;: 3&#125;, &#123;&#39;x&#39;: 2&#125;, &#123;&#39;x&#39;: 1&#125;)</span><br><span class="line">&gt;&gt;&gt; values[&#39;x&#39;]</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; # Discard last mapping</span><br><span class="line">&gt;&gt;&gt; values &#x3D; values.parents</span><br><span class="line">&gt;&gt;&gt; values[&#39;x&#39;]</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; # Discard last mapping</span><br><span class="line">&gt;&gt;&gt; values &#x3D; values.parents</span><br><span class="line">&gt;&gt;&gt; values[&#39;x&#39;]</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; values</span><br><span class="line">ChainMap(&#123;&#39;x&#39;: 1&#125;)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1解压序列赋值给多个变量"><span class="toc-text">1.1解压序列赋值给多个变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2解压可迭代对象赋值给多个变量"><span class="toc-text">1.2解压可迭代对象赋值给多个变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3保留最后-N-个元素"><span class="toc-text">1.3保留最后 N 个元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4查找最大或最小的-N-个元素"><span class="toc-text">1.4查找最大或最小的 N 个元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5实现一个优先级队列"><span class="toc-text">1.5实现一个优先级队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6字典中的键映射多个值"><span class="toc-text">1.6字典中的键映射多个值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7字典排序"><span class="toc-text">1.7字典排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8字典的运算"><span class="toc-text">1.8字典的运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10删除序列相同元素并保持顺序"><span class="toc-text">1.10删除序列相同元素并保持顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-11命名切片"><span class="toc-text">1.11命名切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-12序列中出现次数最多的元素"><span class="toc-text">1.12序列中出现次数最多的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-13通过某个关键字排序一个字典列表"><span class="toc-text">1.13通过某个关键字排序一个字典列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-14排序不支持原生比较的对象"><span class="toc-text">1.14排序不支持原生比较的对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-15通过某个字段将记录分组"><span class="toc-text">1.15通过某个字段将记录分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-16过滤序列元素"><span class="toc-text">1.16过滤序列元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-18映射名称到序列元素"><span class="toc-text">1.18映射名称到序列元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-20合并多个字典或映射"><span class="toc-text">1.20合并多个字典或映射</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2020/04/07/%E5%B8%B8%E8%A7%81%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/" class="next">Next post 常见安装问题 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by JJ Wang using
+      <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random" target="_blank" rel="noopener">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":1500000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

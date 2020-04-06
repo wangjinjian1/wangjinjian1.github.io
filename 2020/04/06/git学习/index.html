@@ -1,0 +1,331 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="JJ Wang">
+  
+  
+  
+  
+    <meta name="description" content="git学习##基本操作
+git add12git add .  可以提交未跟踪和修改文件，但是不处理删除文件
+12git add all可以提交未跟踪、修改和删除文件
+12git add -p xxx可以提交部分内容，选择e
+git blame123git blame xxx查看xxx由哪些人提交过git blame -L 2,5 index.html
+###git log
+12345git...">
+  
+  <title>git学习 [ Wang's Blog ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4"/>
+          <div id="homelink">Wang's Blog</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>git学习</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2020-04-06</span>
+      
+        <span id = "post-title-updated">Updated at 2020-04-06</span>
+      
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/git/">git</a>
+      
+      </span>
+      
+    </p>
+    
+    <h1 id="git学习"><a href="#git学习" class="headerlink" title="git学习"></a>git学习</h1><p>##基本操作</p>
+<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .  </span><br><span class="line">可以提交未跟踪和修改文件，但是不处理删除文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add all</span><br><span class="line">可以提交未跟踪、修改和删除文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add -p xxx</span><br><span class="line">可以提交部分内容，选择e</span><br></pre></td></tr></table></figure>
+<h3 id="git-blame"><a href="#git-blame" class="headerlink" title="git blame"></a>git blame</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git blame xxx</span><br><span class="line">查看xxx由哪些人提交过</span><br><span class="line">git blame -L 2,5 index.html</span><br></pre></td></tr></table></figure>
+<p>###git log</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">仅查看简略的提交历史即可，可以采用如下参数：</span><br><span class="line">git log --pretty&#x3D;oneline</span><br><span class="line">只给出了提交的SHA-1值和提交信息</span><br><span class="line">git log --oneline</span><br></pre></td></tr></table></figure>
+<h3 id="git-show"><a href="#git-show" class="headerlink" title="git show"></a>git show</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git show -s --pretty&#x3D;raw commitId</span><br><span class="line">git show</span><br></pre></td></tr></table></figure>
+<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git diff</span><br><span class="line">查看改动</span><br><span class="line">---表示变化前的版本。</span><br><span class="line">+++表示变化后的版本。</span><br><span class="line">&quot;-3,7&quot;：减号表示变化前的文件，3表示第三行，7表示连续七行，也就是从第三行（包括）开始，连续7行。</span><br><span class="line">&quot;+3,7&quot;：加号表示变化后的文件，3表示第三行，7表示连续七行，也就是从第三行（包括）开始，连续7行。</span><br></pre></td></tr></table></figure>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git branch newBr</span><br><span class="line">git branch -f newBr</span><br><span class="line">新建分支后，并不能自动切换到新分支</span><br><span class="line">git branch -m br ant</span><br><span class="line">分支改名</span><br><span class="line">git branch</span><br><span class="line">查看分支</span><br><span class="line">$ git branch -d test</span><br><span class="line">删除test分支</span><br></pre></td></tr></table></figure>
+<h3 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git checkout Develop</span><br><span class="line">切换分支</span><br><span class="line">git checkout -b testBr c485217</span><br><span class="line">分支testBr是基于c485217创建，创建的同时并切换到此分支</span><br><span class="line">git stash branch newBr</span><br><span class="line">以最新的储藏创建一个分支</span><br><span class="line">git checkout readme.txt</span><br><span class="line">将暂存区的文件恢复到工作区</span><br></pre></td></tr></table></figure>
+<h3 id="checkout"><a href="#checkout" class="headerlink" title="checkout"></a>checkout</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">checkout -b newBr2</span><br><span class="line">在新建newBr2分支的同时，切换到此分支</span><br><span class="line">checkout -B newBr2</span><br><span class="line">覆盖</span><br></pre></td></tr></table></figure>
+<h3 id="git-reflog-show"><a href="#git-reflog-show" class="headerlink" title="git reflog show"></a>git reflog show</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog show --date&#x3D;iso master</span><br><span class="line">查看分支创建时间</span><br></pre></td></tr></table></figure>
+<h3 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i xxx</span><br><span class="line">调整commit顺序。删除commit</span><br></pre></td></tr></table></figure>
+<h3 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git reset 04a540f --hard</span><br><span class="line">取消修改</span><br><span class="line">git reset HEAD^ --hard</span><br><span class="line">（1）.--mixed：默认值，当重置分支所指向commit提交位置时，暂存区中的内容会被新指向的commit提交内容所替换，工作区内容不变。</span><br><span class="line">（2）.--soft：暂存区和工作区的内容都保持原样，不会被替换。</span><br><span class="line">（3）.--hard：暂存区和工作区的内容都会被新指向的commit提交内容所替换；git reset --hard只影响被跟踪的文件，如果工作区有新增的文件，并不会被影响。</span><br></pre></td></tr></table></figure>
+<h3 id="git-rm"><a href="#git-rm" class="headerlink" title="git rm"></a>git rm</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached readme.txt</span><br><span class="line">删除暂存区的文件</span><br><span class="line">git rm readme.txt</span><br><span class="line">删除暂存区和工作区的文件</span><br></pre></td></tr></table></figure>
+<h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git stash -m xxx</span><br><span class="line">暂存区</span><br><span class="line">git stash push -u</span><br><span class="line">暂存区和工作区</span><br><span class="line">git stash push -a</span><br><span class="line">ignore忽略的文件</span><br><span class="line">git stash push -k</span><br><span class="line">不充值暂存区</span><br></pre></td></tr></table></figure>
+
+<p>###关于工作区‘暂存区和版本库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">git add 是将工作区的内容加到暂存区</span><br><span class="line">git commit 是将暂存区提交到版本库</span><br><span class="line">版本的回退步骤：</span><br><span class="line">git log --oneline</span><br><span class="line">git reset --hard 版本号</span><br><span class="line">git reflog 可以查看所有分支的所有操作记录</span><br><span class="line">撤销修改：</span><br><span class="line">如果将暂存区的退回到工作区可以使用git reset HEAD file</span><br><span class="line">git checkout -- file</span><br><span class="line">意思就是，把file文件在工作区的修改全部撤销，这里有两种情况：</span><br><span class="line">一种是file自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</span><br><span class="line">一种是file已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</span><br><span class="line">删除：</span><br><span class="line">git rm file</span><br><span class="line">若失误，可以用git checkout -- file来退回（若commit则无法退回）</span><br><span class="line"></span><br><span class="line">git diff查看工作区和暂存区差异</span><br><span class="line"></span><br><span class="line">git diff --cached查看暂存区和仓库差异</span><br><span class="line"></span><br><span class="line">git diff HEAD 查看工作区和仓库的差异</span><br><span class="line"></span><br><span class="line">git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区</span><br><span class="line"></span><br><span class="line">git commit的反向命令git reset HEAD，就是把仓库最新版本转移到暂存区</span><br><span class="line"></span><br><span class="line">git status就是单纯看工作区情况</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git学习"><span class="toc-text">git学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-add"><span class="toc-text">git add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-blame"><span class="toc-text">git blame</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-show"><span class="toc-text">git show</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-diff"><span class="toc-text">git diff</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支操作"><span class="toc-text">分支操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-branch"><span class="toc-text">git branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-checkout"><span class="toc-text">git checkout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#checkout"><span class="toc-text">checkout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-reflog-show"><span class="toc-text">git reflog show</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rebase"><span class="toc-text">git rebase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-reset"><span class="toc-text">git reset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rm"><span class="toc-text">git rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-stash"><span class="toc-text">git stash</span></a></li></ol></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by JJ Wang using
+      <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random" target="_blank" rel="noopener">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="https://avatars3.githubusercontent.com/u/13285397?s=460&v=4">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/wangjinjian1" target="_blank" rel="noopener">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":1500000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

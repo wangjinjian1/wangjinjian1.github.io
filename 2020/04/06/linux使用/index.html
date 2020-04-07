@@ -16,10 +16,16 @@
   
   
   
-    <meta name="description" content="Linux 开放端口参考网站 linux开放端口 
-步骤（Centos7）
-关闭关闭firewall：  123systemctl stop firewalld.servicesystemctl disable firewalld.servicesystemctl mask firewalld.service
-安装iptables防火墙  1yum install iptables-serv...">
+    <meta name="description" content="[Linux 开放端口](#Linux 开放端口)用户赋予root权限更改文件属性文件内容查询VIMbash
+bashVIM基本按键区块选择
+vim补齐
+文件内容查询which 寻找执行档1which ifconfig
+
+whereis 特定目录中寻找文件文件名
+主要针对/bin/sbin、/sur/share/man
+locate
+find  
+更改文件属性123456chgrp grou...">
   
   <title>linux使用 [ Wang's Blog ]</title>
   
@@ -129,12 +135,12 @@
   <article id="post">
     <h1>linux使用</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2020-04-06</span>
+      <span id = "post-title-date">撰写于 2020-04-06</span>
       
-        <span id = "post-title-updated">Updated at 2020-04-07</span>
+        <span id = "post-title-updated">修改于 2020-04-07</span>
       
       
-      <span id = "post-title-categories">Category
+      <span id = "post-title-categories">分类
       
       
         
@@ -145,7 +151,7 @@
       
       
       <span id = "post-title-tags">
-      Tag
+      标签
       
       
         
@@ -156,8 +162,27 @@
       
     </p>
     
-    <h1 id="Linux-开放端口"><a href="#Linux-开放端口" class="headerlink" title="Linux 开放端口"></a>Linux 开放端口</h1><h2 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h2><p><a href="https://www.jianshu.com/p/4f099f140ad1" target="_blank" rel="noopener"> linux开放端口 </a></p>
-<h2 id="步骤（Centos7）"><a href="#步骤（Centos7）" class="headerlink" title="步骤（Centos7）"></a>步骤（Centos7）</h2><ol>
+    <p>[Linux 开放端口](#Linux 开放端口)<br><a href="#用户赋予root权限">用户赋予root权限</a><br><a href="#更改文件属性">更改文件属性</a><br><a href="#文件内容查询">文件内容查询</a><br><a href="#VIM">VIM</a><br><a href="#bash">bash</a></p>
+<h2 id="bash"><a href="#bash" class="headerlink" title="bash"></a><span id="bash">bash</span></h2><h2 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a><span id="VIM">VIM</span></h2><h4 id="基本按键"><a href="#基本按键" class="headerlink" title="基本按键"></a>基本按键</h4><h4 id="区块选择"><a href="#区块选择" class="headerlink" title="区块选择"></a>区块选择</h4><p><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cvim1.PNG" alt="vim1"></p>
+<h4 id="vim补齐"><a href="#vim补齐" class="headerlink" title="vim补齐"></a>vim补齐</h4><p><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cvim2.PNG" alt="vim2"></p>
+<h2 id="文件内容查询"><a href="#文件内容查询" class="headerlink" title="文件内容查询"></a><span id="文件内容查询">文件内容查询</span></h2><h4 id="which-寻找执行档"><a href="#which-寻找执行档" class="headerlink" title="which 寻找执行档"></a>which 寻找执行档</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which ifconfig</span><br></pre></td></tr></table></figure>
+
+<h4 id="whereis-特定目录中寻找文件文件名"><a href="#whereis-特定目录中寻找文件文件名" class="headerlink" title="whereis 特定目录中寻找文件文件名"></a>whereis 特定目录中寻找文件文件名</h4><p><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cwhereis.PNG" alt="whereis"></p>
+<p>主要针对/bin/sbin、/sur/share/man</p>
+<h4 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h4><p><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Clocate.PNG" alt="locate"></p>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><p><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cfind1.PNG" alt="find1"><br><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cfind2.PNG" alt="find2"><br><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cfind3.PNG" alt="find2"><br><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cfind4.PNG" alt="find2"><br><img src="/2020/04/06/linux%E4%BD%BF%E7%94%A8/E:%5CDesk%5CmyBlog%5Csource_posts%5Clinux%E4%BD%BF%E7%94%A8%5Cfind5.PNG" alt="find2">  </p>
+<h2 id="更改文件属性"><a href="#更改文件属性" class="headerlink" title="更改文件属性"></a><span id="更改文件属性">更改文件属性</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">chgrp groupName fileOrDirectory</span><br><span class="line">chown username:groupName fileOrDirectory</span><br><span class="line">chmod </span><br><span class="line">	u,g,o,a  +,-,&#x3D;  r,w,x fileOrDirectory</span><br><span class="line">	777 fileOrDirectory</span><br><span class="line">	-R  表示进行递归</span><br></pre></td></tr></table></figure>
+<h4 id="权限对文件的意义："><a href="#权限对文件的意义：" class="headerlink" title="权限对文件的意义："></a>权限对文件的意义：</h4><p><strong>r</strong>:可读取此文件的实际内容<br><strong>w</strong>:可以编辑、新增或者修改文件内容（不含删除）<br><strong>x</strong>:具有被系统可执行的权限   </p>
+<h4 id="权限对目录的意义："><a href="#权限对目录的意义：" class="headerlink" title="权限对目录的意义："></a>权限对目录的意义：</h4><p><strong>r</strong>:可读取目录列表<br><strong>w</strong>:建立或删除或更名或搬移目录里的文件或者目录<br><strong>x</strong>:能否进入目录，该目录成为工作目录  </p>
+<h4 id="文件的特殊权限"><a href="#文件的特殊权限" class="headerlink" title="文件的特殊权限"></a>文件的特殊权限</h4><p>SUID:（仅对二进制程序有效）执行者对程序具有x的可执行权限，执行时会具有拥有者的权限</p>
+<p>SGID:类似于SUID，获得程序群组的支持</p>
+<p>SBIT:（对目录有效）用户对目录有w，x权限，在用户在该目录下建立文件或者目录，只有自己与root才有权力删除该文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">4 SUID</span><br><span class="line">2 SGID</span><br><span class="line">1 SBIT</span><br><span class="line">chmod 4755 file  S T代表是空的</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Linux-开放端口"><a href="#Linux-开放端口" class="headerlink" title="Linux 开放端口"></a><span id="Linux 开放端口">Linux 开放端口</span></h2><h3 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h3><p><a href="https://www.jianshu.com/p/4f099f140ad1" target="_blank" rel="noopener"> linux开放端口 </a></p>
+<h3 id="步骤（Centos7）"><a href="#步骤（Centos7）" class="headerlink" title="步骤（Centos7）"></a>步骤（Centos7）</h3><ol>
 <li>关闭关闭firewall：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line">systemctl mask firewalld.service</span><br></pre></td></tr></table></figure></li>
 <li>安装iptables防火墙  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install iptables-services -y</span><br></pre></td></tr></table></figure></li>
 <li>启动设置防火墙<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable iptables</span><br><span class="line">systemctl start iptables</span><br></pre></td></tr></table></figure></li>
@@ -168,30 +193,28 @@
 
 </li>
 </ol>
-<h1 id="用户赋予root权限"><a href="#用户赋予root权限" class="headerlink" title="用户赋予root权限"></a>用户赋予root权限</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;sudoers</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## Allow root to run any commands anywhere</span><br><span class="line">root    ALL&#x3D;(ALL)     ALL</span><br><span class="line">tommy   ALL&#x3D;(ALL)     ALL</span><br></pre></td></tr></table></figure>
-<p>sudo无需输入密码  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%wheel ALL&#x3D;(ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+<h2 id="用户赋予root权限"><a href="#用户赋予root权限" class="headerlink" title="用户赋予root权限"></a><span id="用户赋予root权限">用户赋予root权限</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;sudoers</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## Allow root to run any commands anywhere</span><br><span class="line">root    ALL&#x3D;(ALL)     ALL</span><br><span class="line">youuser            ALL&#x3D;(ALL)                ALL</span><br><span class="line">%youuser           ALL&#x3D;(ALL)                ALL</span><br><span class="line">youuser            ALL&#x3D;(ALL)      NOPASSWD: ALL</span><br><span class="line">%youuser           ALL&#x3D;(ALL)      NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">第一行:允许用户youuser执行sudo命令(需要输入密码).</span><br><span class="line">第二行:允许用户组youuser里面的用户执行sudo命令(需要输入密码).</span><br><span class="line">第三行:允许用户youuser执行sudo命令,并且在执行的时候不输入密码.</span><br><span class="line">第四行:允许用户组youuser里面的用户执行sudo命令,并且在执行的时候不输入密码</span><br></pre></td></tr></table></figure>
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
-    <h2>Table of Content</h2>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-开放端口"><span class="toc-text">Linux 开放端口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考网站"><span class="toc-text">参考网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤（Centos7）"><span class="toc-text">步骤（Centos7）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用户赋予root权限"><span class="toc-text">用户赋予root权限</span></a></li></ol>
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#bash"><span class="toc-text">bash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM"><span class="toc-text">VIM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本按键"><span class="toc-text">基本按键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块选择"><span class="toc-text">区块选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim补齐"><span class="toc-text">vim补齐</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件内容查询"><span class="toc-text">文件内容查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#which-寻找执行档"><span class="toc-text">which 寻找执行档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#whereis-特定目录中寻找文件文件名"><span class="toc-text">whereis 特定目录中寻找文件文件名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#locate"><span class="toc-text">locate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改文件属性"><span class="toc-text">更改文件属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#权限对文件的意义："><span class="toc-text">权限对文件的意义：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#权限对目录的意义："><span class="toc-text">权限对目录的意义：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件的特殊权限"><span class="toc-text">文件的特殊权限</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-开放端口"><span class="toc-text">Linux 开放端口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考网站"><span class="toc-text">参考网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤（Centos7）"><span class="toc-text">步骤（Centos7）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户赋予root权限"><span class="toc-text">用户赋予root权限</span></a></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2020/04/06/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="prev">&larr; Prev post 系统环境搭建</a>
+    <a href="/2020/04/06/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="prev">&larr; 上一篇 系统环境搭建</a>
   
 
   
 
   
-    <a href="/2020/04/06/frp%E5%86%85%E5%AD%98%E7%A9%BF%E9%80%8F/" class="next">Next post frp内存穿透 &rarr;</a>
+    <a href="/2020/04/06/frp%E5%86%85%E5%AD%98%E7%A9%BF%E9%80%8F/" class="next">下一篇 frp内存穿透 &rarr;</a>
   
 </nav>
 

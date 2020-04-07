@@ -16,11 +16,49 @@
   
   
   
-    <meta name="description" content="find一般格式： find 目录 参数  
-12345678-name  #按名字查找-not  #取反-user #文件所有人 root-group  #文件所有组-a #并且关系-o  #或者关系-maxdepth  #最大深度-mindepth  #最小深度
--size 表示文件大小
--size  20K      # 查找大小为20K的文件
--size  -20K     # -表...">
+    <meta name="description" content="A-E
+F-J
+K-O
+P-T
+U-Z
+
+
+
+
+find
+man
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+manman command  
+1231 用户在shell环境中可以操作的指令或可执行文件5 配置文件或者是某些文件的格式8 系统管理员可用的管理命令
+
+
+
+find一般格式： find 目录 参数  
+12345678-name  #按名字查找-not  #取反-user ...">
   
   <title>linux学习 [ Wang's Blog ]</title>
   
@@ -130,12 +168,12 @@
   <article id="post">
     <h1>linux学习</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">撰写于 2020-04-06</span>
+      <span id = "post-title-date">Created at 2020-04-06</span>
       
-        <span id = "post-title-updated">修改于 2020-04-06</span>
+        <span id = "post-title-updated">Updated at 2020-04-07</span>
       
       
-      <span id = "post-title-categories">分类
+      <span id = "post-title-categories">Category
       
       
         
@@ -146,45 +184,102 @@
       
       
       <span id = "post-title-tags">
-      标签
+      Tag
       
       
         
         
         <a href="/tags/%E6%8C%87%E4%BB%A4/">指令</a>
       
+        
+          /
+        
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+      
       </span>
       
     </p>
     
-    <h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>一般格式： find 目录 参数  </p>
+    <table>
+<thead>
+<tr>
+<th align="center">A-E</th>
+<th align="center">F-J</th>
+<th align="center">K-O</th>
+<th align="center">P-T</th>
+<th align="center">U-Z</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"><a href="#find">find</a></td>
+<td align="center"><a href="#man">man</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="man"><a href="#man" class="headerlink" title="man"></a><span id="man">man</span></h3><p>man command  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 用户在shell环境中可以操作的指令或可执行文件</span><br><span class="line">5 配置文件或者是某些文件的格式</span><br><span class="line">8 系统管理员可用的管理命令</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a><span id="find">find</span></h3><p>一般格式： find 目录 参数  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-name  #按名字查找</span><br><span class="line">-not  #取反</span><br><span class="line">-user #文件所有人 root</span><br><span class="line">-group  #文件所有组</span><br><span class="line">-a #并且关系</span><br><span class="line">-o  #或者关系</span><br><span class="line">-maxdepth  #最大深度</span><br><span class="line">-mindepth  #最小深度</span><br></pre></td></tr></table></figure>
 <p>-size 表示文件大小</p>
 <pre><code>-size  20K      # 查找大小为20K的文件
 -size  -20K     # -表示小于；查找比20K小的文件
--size  +20k     # +表示大于；查看比20K大的文件</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;</span><br><span class="line">-type         #文件类型</span><br><span class="line">主要的文件类型：</span><br><span class="line">     f        #普通文件</span><br><span class="line">     d        #目录</span><br><span class="line">     b        #块设备</span><br><span class="line">     s        #套接字</span><br><span class="line">     c        #字符设备</span><br><span class="line">     l        #链接</span><br><span class="line">     p        #管道</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-perm  表示权限</span><br><span class="line"></span><br><span class="line">-perm  444       #查找文件权限</span><br><span class="line">-perm  -444      # -表示并且；查找文件权限中u位有r权限，并且g位有r权限，并且o位有r权限的文件</span><br><span class="line">-perm  &#x2F;444      # &#x2F;表示或者；查找文件权限中u位有r权限，或者g位有r权限，或者o位有r权限的文件</span><br><span class="line">-perm  &#x2F;777      # 777&#x3D;rwx rwx rwx 即9个条件中满足任意一个即可</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctime 与 cmin 都表示按照时间查找被篡改的文件</span><br><span class="line"></span><br><span class="line">ctime   ##以天为单位</span><br><span class="line">cmin    ##以分钟为单位 </span><br><span class="line"></span><br><span class="line">-cmin  10         #查找文件更新距离现在10分钟的文件</span><br><span class="line">-cmin  +10        #查找文件更新距离现在超过10分钟的文件</span><br><span class="line">-cmin  -10        #查找文件更新距离现在10分钟以内的文件</span><br><span class="line">-ctime  +&#x2F;-10     #查找文件更新距离现在超过10天&#x2F;10天以内的文件</span><br></pre></td></tr></table></figure>
+-size  +20k     # +表示大于；查看比20K大的文件</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>-type         #文件类型<br>主要的文件类型：<br>     f        #普通文件<br>     d        #目录<br>     b        #块设备<br>     s        #套接字<br>     c        #字符设备<br>     l        #链接<br>     p        #管道</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>-perm  表示权限</p>
+<p>-perm  444       #查找文件权限<br>-perm  -444      # -表示并且；查找文件权限中u位有r权限，并且g位有r权限，并且o位有r权限的文件<br>-perm  /444      # /表示或者；查找文件权限中u位有r权限，或者g位有r权限，或者o位有r权限的文件<br>-perm  /777      # 777=rwx rwx rwx 即9个条件中满足任意一个即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>ctime 与 cmin 都表示按照时间查找被篡改的文件</p>
+<p>ctime   ##以天为单位<br>cmin    ##以分钟为单位 </p>
+<p>-cmin  10         #查找文件更新距离现在10分钟的文件<br>-cmin  +10        #查找文件更新距离现在超过10分钟的文件<br>-cmin  -10        #查找文件更新距离现在10分钟以内的文件<br>-ctime  +/-10     #查找文件更新距离现在超过10天/10天以内的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li></ol>
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#man"><span class="toc-text">man</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2020/04/06/oneindex/" class="prev">&larr; 上一篇 oneindex</a>
+    <a href="/2020/04/06/oneindex/" class="prev">&larr; Prev post oneindex</a>
   
 
   
 
   
-    <a href="/2020/04/06/git%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="next">下一篇 git指令学习 &rarr;</a>
+    <a href="/2020/04/06/git%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="next">Next post git指令学习 &rarr;</a>
   
 </nav>
 
